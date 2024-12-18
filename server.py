@@ -3,10 +3,11 @@ from flask_cors import CORS  # Importa CORS
 from langchain_experimental.agents import create_csv_agent
 from langchain.chat_models import ChatOpenAI
 import os
+from dotenv import load_dotenv
 
 # Configurazione della chiave API
-os.environ["OPENAI_API_KEY"] = "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"
-
+load_dotenv()
+key = os.environ.get("OPENAI_API_KEY")
 # Inizializza il modello
 llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
 
